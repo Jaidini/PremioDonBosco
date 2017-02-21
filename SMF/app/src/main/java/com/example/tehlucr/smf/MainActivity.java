@@ -3,15 +3,19 @@ package com.example.tehlucr.smf;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import java.util.List;
 
 
@@ -51,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             httpClient.execute(httpPost);
             return true;
         } catch (Exception e) {
-            Log.e(e);
+            final int e1 = Log.e(e);
         }
         return false;
     }
